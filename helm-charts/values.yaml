@@ -2,7 +2,7 @@ appName: python-flask-app
 
 image:
   repository: rajeshgoyalg/python-flask-app
-  tag: latest
+  tag: v20250302-eb5b99f
   pullPolicy: Always  # Ensures Kubernetes always pulls the latest image
 
 replicas: 2
