@@ -50,10 +50,11 @@ jobs:
         run: |
           sed -i "s|tag: .*|tag: ${{ env.VERSION_TAG }}|g" python-flask-app/values.yaml
 
-      - name: Commit & Push Changes
+      - name: Push Changes to Helm Repo
         run: |
           git config --global user.name "Rajesh Goyal"
           git config --global user.email "rajeshgoyalg@gmail.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/rajeshgoyalg/helm-charts.git
           git add python-flask-app/values.yaml
           git commit -m "Update image tag to ${{ env.VERSION_TAG }}"
           git push origin main
