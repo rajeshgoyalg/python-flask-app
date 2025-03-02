@@ -8,6 +8,8 @@ on:
 jobs:
   build-test-push:
     runs-on: ubuntu-latest
+    outputs:
+      IMAGE_TAG: ${{ steps.version.outputs.VERSION_TAG }}  # Define output variable
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
