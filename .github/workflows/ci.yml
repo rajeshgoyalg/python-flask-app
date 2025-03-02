@@ -30,9 +30,9 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t rajeshgoyalg/flask-app:latest -t rajeshgoyalg/flask-app:${{ env.VERSION_TAG }} .
+          docker build -t rajeshgoyalg/python-flask-app:latest -t rajeshgoyalg/python-flask-app:${{ env.VERSION_TAG }} .
 
       - name: Push Docker Image
         run: |
           docker push rajeshgoyalg/python-flask-app:latest
-          docker push rajeshgoyalg/flask-app:${{ env.VERSION_TAG }}
+          docker push rajeshgoyalg/python-flask-app:${{ env.VERSION_TAG }}
